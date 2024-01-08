@@ -6,7 +6,7 @@ recorder.addEventListener("click", async (e) => {
     video: { frameRate: { ideal: 30 } },
     audio: true,
   });
-
+  console.log(Audio);
   const mediarecorder = new MediaRecorder(media, {
     mimeType: "video/webm;codecs=vp8, opus",
   });
