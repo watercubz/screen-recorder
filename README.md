@@ -20,15 +20,42 @@
 
 > If anyone who wants can contribute and improve the app
 
-- how to adjust resolution and frames
+- code example
 
-![Alt text](src/image2.png)
+````javascript
 
-> With the Media Display what you do is that you choose the setting and the ideal frames for the recording, of course you can modify it and adjust it to taste
+This JavaScript script utilizes the `navigator.mediaDevices` and `MediaRecorder` API to capture the user's screen and save it as a WebM file when a button is clicked.
 
-- example of how to use the browser api to record
+```javascript
+const recorder = document.querySelector("button");
 
-![Alt text](src/image.png)
+recorder.addEventListener("click", async (e) => {
+  e.preventDefault();
+
+  // Capture the user's screen
+  const media = await navigator.mediaDevices.getDisplayMedia({
+    video: { frameRate: { ideal: 30 } },
+  });
+
+  // Start recording
+  const mediarecorder = new MediaRecorder(media, { mimeType: "video/webm;codecs=vp8, opus" });
+  mediarecorder.start();
+
+  // Stop recording when the video track ends
+  const [video] = media.getVideoTracks();
+  video.addEventListener("ended", () => {
+    mediarecorder.stop();
+  });
+
+  // Download the WebM file when data is available
+  mediarecorder.addEventListener("dataavailable", (e) => {
+    const link = document.createElement("a");
+    link.href = URL.createObjectURL(e.data);
+    link.download = "capture.webm";
+    link.click();
+  });
+});
+````
 
 - Thank you very much for stopping by here, if you liked the repository of your little star to know that you liked the repository
 
