@@ -4,6 +4,7 @@ recorder.addEventListener("click", async (e) => {
   e.preventDefault();
   const media = await navigator.mediaDevices.getDisplayMedia({
     video: { frameRate: { ideal: 30 } },
+    audio: true,
   });
 
   const mediarecorder = new MediaRecorder(media, {

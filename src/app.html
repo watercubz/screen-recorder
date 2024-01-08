@@ -3,40 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
+    <title>Screen Recorder</title>
     <style>
-      :root {
-        color-scheme: dark ligth;
-      }
-
-      .container {
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
         display: flex;
         align-items: center;
         justify-content: center;
-        text-align: center;
         height: 100vh;
         margin: 0;
+        background-color: #f4f4f4;
+        color: #333;
       }
-      .theme-button {
-        background-color: blueviolet;
-        outline: none;
+
+      #recorder-container {
+        text-align: center;
+      }
+
+      .title {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      #recorder-button,
+      #stop-button {
+        font-size: 18px;
+        padding: 15px 30px;
         border: none;
         border-radius: 5px;
-        font-family: Arial, Helvetica, sans-serif;
-        font-size: medium;
-        font-weight: bold;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-bottom: 20px;
         width: 200px;
       }
 
-      .theme-button:hover {
-        background-color: rgb(93, 46, 93);
+      #recorder-button {
+        background-color: #4caf50;
+        color: #fff;
+      }
+
+      #recorder-button:hover {
+        background-color: #45a049;
+      }
+
+      #stop-button {
+        background-color: #d9534f;
+        color: #fff;
+      }
+
+      #stop-button:hover {
+        background-color: #c9302c;
       }
     </style>
   </head>
   <body>
-    <div class="container">
-      <button class="theme-button">🎥 empezar a grabar</button>
+    <div id="recorder-container">
+      <h1 class="title">Screen Recorder</h1>
+      <button id="recorder-button">Start Recording</button>
+      <button id="stop-button" disabled>Stop Recording</button>
     </div>
   </body>
-  <script src="../screen.js"></script>
+  <script src="/screen.js"></script>
 </html>
