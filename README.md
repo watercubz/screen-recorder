@@ -22,10 +22,6 @@
 
 - code example
 
-````javascript
-
-This JavaScript script utilizes the `navigator.mediaDevices` and `MediaRecorder` API to capture the user's screen and save it as a WebM file when a button is clicked.
-
 ```javascript
 const recorder = document.querySelector("button");
 
@@ -38,7 +34,9 @@ recorder.addEventListener("click", async (e) => {
   });
 
   // Start recording
-  const mediarecorder = new MediaRecorder(media, { mimeType: "video/webm;codecs=vp8, opus" });
+  const mediarecorder = new MediaRecorder(media, {
+    mimeType: "video/webm;codecs=vp8, opus",
+  });
   mediarecorder.start();
 
   // Stop recording when the video track ends
@@ -55,7 +53,7 @@ recorder.addEventListener("click", async (e) => {
     link.click();
   });
 });
-````
+```
 
 - Thank you very much for stopping by here, if you liked the repository of your little star to know that you liked the repository
 
