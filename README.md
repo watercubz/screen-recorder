@@ -22,12 +22,14 @@
 
 - how to adjust resolution and frames
 
-![Alt text](image2.png)
+![Alt text](src/image2.png)
 
 > With the Media Display what you do is that you choose the setting and the ideal frames for the recording, of course you can modify it and adjust it to taste
 
 - example of how to use the browser api to record
 
-![Alt text](image.png)
+![Alt text](src/image.png)
 
 - Thank you very much for stopping by here, if you liked the repository of your little star to know that you liked the repository
+
+> created with ❤ by watercubz
